@@ -1,0 +1,8 @@
+output/
+site-original/
+site-redesign/assets/source/
+/*.png
+
+.DS_Store
+Thumbs.db
+node_modules/

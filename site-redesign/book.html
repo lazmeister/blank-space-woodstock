@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check Availability | Blank Space Woodstock Event Venue</title>
+    <meta name="description" content="Request a date for Blank Space, a chic event venue in downtown Woodstock, Ontario. Submit your preferred date, time block, event type, and guest count.">
+    <link rel="canonical" href="https://www.blankspacewoodstock.ca/book">
+    <meta property="og:title" content="Check Availability | Blank Space Woodstock">
+    <meta property="og:description" content="Request your preferred event date at Blank Space in downtown Woodstock.">
+    <meta property="og:image" content="assets/images/pink-shower-backdrop.jpeg">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html" aria-label="Blank Space home"><img src="assets/images/blank-space-logo.png" alt="Blank Space"></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-nav-toggle><span></span><span></span></button><nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav><a href="space.html">The Space</a><a href="index.html#our-story">Story</a><a href="pricing.html">Pricing</a><a href="events.html">Events</a><a href="planning.html">Planning</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a class="button" href="book.html" aria-current="page">Check Availability</a></nav></div></header>
+
+    <main id="main">
+      <section class="page-hero centered">
+        <div class="container">
+          <div class="reveal title-fusion center"><span class="eyebrow">request</span><h1>A Date</h1></div>
+          <p class="lead reveal">Tell us when you want to gather. Dates are not confirmed until the contract and deposit are complete, and setup and cleanup time should be included in your requested booking block.</p>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <div class="container booking-shell">
+          <form class="form-panel reveal" data-mail-form>
+            <input type="hidden" name="subject" value="Blank Space availability request">
+            <div class="form-grid">
+              <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" autocomplete="tel" required></div>
+              <div class="field"><label for="date">Preferred date</label><input id="date" name="preferred-date" type="date" required></div>
+              <div class="field"><label for="start">Preferred start time</label><input id="start" name="preferred-start-time" type="time" required></div>
+              <div class="field"><label for="guests">Guest count</label><input id="guests" name="guest-count" type="number" min="1" max="72" required></div>
+              <div class="field"><label for="block">Rental block</label><select id="block" name="rental-block"><option>Weekday hourly</option><option>Weekday full day</option><option>Weekend 3-hour</option><option>Weekend 5-hour</option><option>Weekend full day</option><option>Not sure yet</option></select></div>
+              <div class="field"><label for="event-type">Event type</label><select id="event-type" name="event-type"><option>Baby shower</option><option>Bridal shower</option><option>Birthday</option><option>Engagement or anniversary</option><option>Corporate event</option><option>Workshop or class</option><option>Studio rental</option><option>Other</option></select></div>
+              <div class="field full"><label for="notes">Setup, cleanup, and event notes</label><textarea id="notes" name="notes" required></textarea></div>
+            </div>
+            <button class="button" type="submit">Send Date Request</button>
+            <p class="form-note" data-form-status>Submitting opens your email app with these details filled in. Blank Space will respond within 48 hours.</p>
+          </form>
+          <aside class="booking-aside reveal">
+            <span class="script">what happens next</span>
+            <h2>Simple, clear, no guesswork.</h2>
+            <div class="process-list">
+              <article><p class="meta">1</p><h3>Send your request</h3><p>Include your date, time, guest count, and setup needs.</p></article>
+              <article><p class="meta">2</p><h3>We confirm fit</h3><p>You will hear back within 48 hours about availability and next steps.</p></article>
+              <article><p class="meta">3</p><h3>Secure the date</h3><p>Your booking is held after contract and deposit are complete.</p></article>
+            </div>
+            <div class="actions"><a class="button secondary" href="pricing.html">Review Pricing</a></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-grid"><div><img class="footer-logo" src="assets/images/blank-space-logo.png" alt="Blank Space"><p>A boutique event venue and space rental in downtown Woodstock, Ontario.</p></div><div><h3>Location</h3><p>159 Main Street<br>Woodstock, ON<br>N4S 1T1</p></div><div><h3>Contact</h3><p><a href="mailto:oxfordoccasions@gmail.com">oxfordoccasions@gmail.com</a><br><a href="tel:+15195326793">(519) 532-6793</a></p><nav class="footer-nav" aria-label="Footer navigation"><a href="https://www.instagram.com/blankspace.woodstock/">Instagram</a><a href="contact.html">Request a Tour</a></nav></div></div></footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
