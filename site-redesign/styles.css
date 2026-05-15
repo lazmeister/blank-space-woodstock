@@ -1010,12 +1010,6 @@ p {
   box-shadow: 0 28px 70px rgba(47, 41, 36, 0.11);
 }
 
-.map-frame figcaption {
-  margin-top: 12px;
-  color: var(--ink-soft);
-  font-size: 0.82rem;
-}
-
 .form-panel .form-grid {
   margin-bottom: 22px;
 }
