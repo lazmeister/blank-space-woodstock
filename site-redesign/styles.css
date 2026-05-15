@@ -650,24 +650,18 @@ p {
   height: clamp(310px, 39vw, 570px);
 }
 
-.venue-gallery {
+.room-photo-grid {
+  display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(22px, 4vw, 46px);
-  align-items: start;
+  gap: clamp(22px, 4vw, 52px);
 }
 
-.venue-gallery img {
+.room-photo-grid img {
+  display: block;
+  width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
-}
-
-.venue-gallery img:first-child {
-  grid-column: 1 / -1;
-  aspect-ratio: 16 / 8.5;
-}
-
-.venue-gallery img:nth-child(2) {
-  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 22px 60px rgba(47, 41, 36, 0.08);
 }
 
 .price {
@@ -1262,11 +1256,8 @@ textarea {
     height: 360px;
   }
 
-  .venue-gallery img,
-  .venue-gallery img:first-child,
-  .venue-gallery img:nth-child(2) {
-    height: auto;
-    aspect-ratio: 4 / 3;
+  .room-photo-grid {
+    grid-template-columns: 1fr;
   }
 }
 
