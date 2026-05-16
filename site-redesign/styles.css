@@ -282,7 +282,7 @@ button.button {
 }
 
 .hero-kicker {
-  margin: 0 0 clamp(24px, 3.1vw, 40px);
+  margin: 0 0 clamp(30px, 3.8vw, 50px);
   color: #e6c6a1;
   font-family: var(--font-serif);
   font-size: clamp(1.08rem, 1.55vw, 1.56rem);
@@ -296,20 +296,20 @@ button.button {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.18em;
-  margin: 0;
+  gap: 0.22em;
+  margin: 0 0 8px;
   max-width: 940px;
   color: var(--white);
-  line-height: 0.82;
+  line-height: 0.9;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.28);
 }
 
 .hero-brand-script {
   display: inline-block;
   font-family: var(--font-script);
-  font-size: clamp(4.2rem, 8.8vw, 8.9rem);
+  font-size: clamp(4rem, 8.2vw, 8.2rem);
   font-weight: 400;
-  line-height: 0.55;
+  line-height: 0.62;
   margin-right: 0.04em;
   text-transform: lowercase;
 }
@@ -509,7 +509,7 @@ p {
 .hero .lead {
   color: rgba(255, 253, 249, 0.94);
   max-width: 560px;
-  margin-top: 20px;
+  margin-top: 28px;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.28);
 }
 
@@ -1479,16 +1479,16 @@ textarea {
 
   .hero-kicker {
     max-width: none;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
     font-size: clamp(0.88rem, 3.85vw, 1rem);
   }
 
   .hero-brand {
-    gap: 0.14em;
+    gap: 0.18em;
   }
 
   .hero-brand-script {
-    font-size: clamp(3.15rem, 17vw, 4.45rem);
+    font-size: clamp(3rem, 15.4vw, 4.1rem);
     margin-right: 0.03em;
   }
 
