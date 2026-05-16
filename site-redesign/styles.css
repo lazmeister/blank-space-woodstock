@@ -646,14 +646,14 @@ p {
 
 .motion-script-two {
   left: 5.6%;
-  top: 53.6%;
+  top: 49.2%;
   font-size: clamp(4rem, 8.8vw, 9.1rem);
   animation-delay: 4s;
 }
 
 .motion-script-three {
   left: 12.8%;
-  top: 53.6%;
+  top: 48.8%;
   font-size: clamp(3.8rem, 8.45vw, 8.8rem);
   animation-delay: 8s;
 }
@@ -1642,13 +1642,13 @@ textarea {
 
   .motion-script-two {
     left: 4.5%;
-    top: 53.6%;
+    top: 48.8%;
     font-size: clamp(2.1rem, 11.5vw, 3rem);
   }
 
   .motion-script-three {
     left: 8%;
-    top: 53.6%;
+    top: 48.4%;
     font-size: clamp(2rem, 11vw, 2.9rem);
   }
 
