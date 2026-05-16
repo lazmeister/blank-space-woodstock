@@ -1560,7 +1560,7 @@ textarea {
     background-image:
       linear-gradient(180deg, rgba(19, 15, 13, 0.64), rgba(19, 15, 13, 0.84)),
       var(--hero-image);
-    background-position: center;
+    background-position: var(--hero-position-mobile, 42% center);
   }
 
   .hero-inner {
