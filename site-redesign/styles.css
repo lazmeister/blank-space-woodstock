@@ -296,7 +296,7 @@ button.button {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.12em;
+  gap: 0.18em;
   margin: 0;
   max-width: 940px;
   color: var(--white);
@@ -307,16 +307,17 @@ button.button {
 .hero-brand-script {
   display: inline-block;
   font-family: var(--font-script);
-  font-size: clamp(4.75rem, 9.8vw, 9.8rem);
+  font-size: clamp(4.2rem, 8.8vw, 8.9rem);
   font-weight: 400;
   line-height: 0.55;
+  margin-right: 0.04em;
   text-transform: lowercase;
 }
 
 .hero-brand-serif {
   display: inline-block;
   font-family: var(--font-fashion);
-  font-size: clamp(4rem, 7.5vw, 7.6rem);
+  font-size: clamp(3.9rem, 7vw, 7rem);
   font-weight: 400;
   line-height: 0.78;
   text-transform: lowercase;
@@ -1479,15 +1480,16 @@ textarea {
   }
 
   .hero-brand {
-    gap: 0.08em;
+    gap: 0.14em;
   }
 
   .hero-brand-script {
-    font-size: clamp(3.45rem, 20vw, 5rem);
+    font-size: clamp(3.15rem, 17vw, 4.45rem);
+    margin-right: 0.03em;
   }
 
   .hero-brand-serif {
-    font-size: clamp(2.95rem, 14.5vw, 4rem);
+    font-size: clamp(2.85rem, 13vw, 3.75rem);
   }
 
   h2 {
