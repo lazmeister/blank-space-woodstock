@@ -5,8 +5,9 @@ import requests
 from PIL import Image, ImageDraw, ImageFont
 
 
-VENUE_LAT = 43.125887
-VENUE_LON = -80.769466
+# Use the mapped building centroid rather than the roadside address node.
+VENUE_LAT = 43.125929
+VENUE_LON = -80.7689616
 
 WIDTH = 1200
 HEIGHT = 820
@@ -63,9 +64,21 @@ def fetch_map_elements():
     return response.json()["elements"]
 
 
+def mercator_y(lat):
+    lat_rad = math.radians(lat)
+    return math.log(math.tan(math.pi / 4 + lat_rad / 2))
+
+
 def project(lat, lon):
-    x = PAD_PX + (lon - (VENUE_LON - PAD_LON)) / (PAD_LON * 2) * (WIDTH - PAD_PX * 2)
-    y = PAD_PX + ((VENUE_LAT + PAD_LAT) - lat) / (PAD_LAT * 2) * (HEIGHT - PAD_PX * 2)
+    west = VENUE_LON - PAD_LON
+    east = VENUE_LON + PAD_LON
+    south = VENUE_LAT - PAD_LAT
+    north = VENUE_LAT + PAD_LAT
+    x = PAD_PX + (lon - west) / (east - west) * (WIDTH - PAD_PX * 2)
+    merc_north = mercator_y(north)
+    merc_south = mercator_y(south)
+    merc_point = mercator_y(lat)
+    y = PAD_PX + (merc_north - merc_point) / (merc_north - merc_south) * (HEIGHT - PAD_PX * 2)
     return x, y
 
 
@@ -244,6 +257,7 @@ def draw_map():
     georgia = "C:/Windows/Fonts/georgia.ttf"
     segoe = "C:/Windows/Fonts/segoeui.ttf"
     italic = "C:/Windows/Fonts/segoeuii.ttf"
+    venue_font = ImageFont.truetype(georgia, 26)
 
     for road_name, latlon in TARGET_LABEL_POINTS.items():
         position, angle = nearest_label_position(roads_by_name, road_name, latlon)
@@ -278,6 +292,15 @@ def draw_map():
         draw.text((x, y), text, font=park_font, fill="#737373", anchor="mm")
 
     marker_x, marker_y = project(VENUE_LAT, VENUE_LON)
+    draw.text(
+        (marker_x, marker_y - 82),
+        "Blank Space",
+        font=venue_font,
+        fill="#4f4f4f",
+        stroke_width=4,
+        stroke_fill="#efefef",
+        anchor="mm",
+    )
     radius = 32
     draw.ellipse((marker_x - radius, marker_y - radius - 24, marker_x + radius, marker_y + radius - 24), fill=pin)
     draw.polygon([(marker_x - 22, marker_y - 8), (marker_x + 22, marker_y - 8), (marker_x, marker_y + 48)], fill=pin)
