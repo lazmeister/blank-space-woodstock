@@ -1207,14 +1207,18 @@ p {
 
 .map-frame {
   margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 28px 70px rgba(47, 41, 36, 0.11);
 }
 
 .map-frame img {
   width: 100%;
+  display: block;
+  transform: scale(1.02);
+  transform-origin: center center;
   border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: 0 28px 70px rgba(47, 41, 36, 0.11);
 }
 
 .form-panel .form-grid {
@@ -1511,6 +1515,7 @@ textarea {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transform: scale(1.04);
     border: 0;
     border-radius: 0;
     box-shadow: none;
