@@ -3,7 +3,6 @@ output/
 site-original/
 site-redesign/assets/source/
 /fonts/
-site-redesign/assets/fonts/BrittanySignature.ttf
 /*.png
 
 .DS_Store

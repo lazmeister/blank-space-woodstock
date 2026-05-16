@@ -26,12 +26,12 @@ TARGET_LABEL_POINTS = {
 }
 
 ROAD_LABEL_STYLE = {
-    "Main Street": {"font_size": 34, "fill": "#423531", "stroke": "#f5f0e8", "stroke_width": 5},
-    "Dundas Street": {"font_size": 20, "fill": "#423531", "stroke": "#f5f0e8", "stroke_width": 4},
-    "Ingersoll Road": {"font_size": 20, "fill": "#423531", "stroke": "#f5f0e8", "stroke_width": 4},
-    "Mill Street": {"font_size": 20, "fill": "#423531", "stroke": "#f5f0e8", "stroke_width": 4},
-    "Oxford Street": {"font_size": 20, "fill": "#423531", "stroke": "#f5f0e8", "stroke_width": 4},
-    "Park Row": {"font_size": 20, "fill": "#63717f", "stroke": "#f5f0e8", "stroke_width": 4},
+    "Main Street": {"font_size": 34, "fill": "#696969", "stroke": "#efefef", "stroke_width": 5},
+    "Dundas Street": {"font_size": 20, "fill": "#696969", "stroke": "#efefef", "stroke_width": 4},
+    "Ingersoll Road": {"font_size": 20, "fill": "#696969", "stroke": "#efefef", "stroke_width": 4},
+    "Mill Street": {"font_size": 20, "fill": "#696969", "stroke": "#efefef", "stroke_width": 4},
+    "Oxford Street": {"font_size": 20, "fill": "#696969", "stroke": "#efefef", "stroke_width": 4},
+    "Park Row": {"font_size": 20, "fill": "#696969", "stroke": "#efefef", "stroke_width": 4},
 }
 
 
@@ -159,14 +159,15 @@ def draw_rotated_text(base_image, text, position, angle, font, fill, stroke_fill
 
 
 def draw_map():
-    bg = "#f5f0e8"
-    park_fill = "#dcebd6"
-    water_fill = "#c6e7ef"
-    water_stroke = "#95ccd7"
-    local_road = "#b9c2cb"
-    major_road_fill = "#ece2b6"
-    major_road_edge = "#b79f67"
-    rail_color = "#c9c2bc"
+    bg = "#efefef"
+    park_fill = "#ebebeb"
+    water_fill = "#d3d3d3"
+    water_stroke = "#d3d3d3"
+    local_road = "#ffffff"
+    local_road_stroke = "#d7d7d7"
+    major_road_fill = "#ffffff"
+    major_road_edge = "#b3b3b3"
+    rail_color = "#cfcfcf"
     pin = "#3b2724"
     pin_inner = "#f3c9d2"
     pin_core = "#fff7f9"
@@ -205,6 +206,7 @@ def draw_map():
             continue
         if highway in {"secondary", "primary", "trunk", "primary_link", "secondary_link"} or name in major_names:
             continue
+        draw.line(line, fill=local_road_stroke, width=6, joint="curve")
         draw.line(line, fill=local_road, width=4, joint="curve")
 
     for tags, line in rails:
@@ -225,7 +227,7 @@ def draw_map():
                 end = min(progress + dash, segment_length)
                 draw.line(
                     [(x1 + dx * start, y1 + dy * start), (x1 + dx * end, y1 + dy * end)],
-                    fill="#f7f3ee",
+                    fill="#fafafa",
                     width=1,
                 )
                 progress += dash + gap
@@ -234,8 +236,8 @@ def draw_map():
         name = tags.get("name", "")
         highway = tags.get("highway", "")
         if highway in {"secondary", "primary", "trunk", "primary_link", "secondary_link"} or name in major_names:
-            outer_width = 12 if name in {"Main Street", "Dundas Street", "Ingersoll Road", "Mill Street", "Oxford Street"} else 8
-            inner_width = 9 if outer_width == 12 else 6
+            outer_width = 11 if name in {"Main Street", "Dundas Street", "Ingersoll Road", "Mill Street", "Oxford Street"} else 8
+            inner_width = 9 if outer_width == 11 else 6
             draw.line(line, fill=major_road_edge, width=outer_width, joint="curve")
             draw.line(line, fill=major_road_fill, width=inner_width, joint="curve")
 
@@ -271,9 +273,9 @@ def draw_map():
         draw.rounded_rectangle(
             (x - width / 2 - 10, y - height / 2 - 6, x + width / 2 + 10, y + height / 2 + 6),
             radius=12,
-            fill=(245, 240, 232, 180),
+            fill=(239, 239, 239, 190),
         )
-        draw.text((x, y), text, font=park_font, fill="#73806d", anchor="mm")
+        draw.text((x, y), text, font=park_font, fill="#737373", anchor="mm")
 
     marker_x, marker_y = project(VENUE_LAT, VENUE_LON)
     radius = 32
@@ -282,7 +284,7 @@ def draw_map():
     draw.ellipse((marker_x - 11, marker_y - 35, marker_x + 11, marker_y - 13), fill=pin_inner)
     draw.ellipse((marker_x - 5, marker_y - 29, marker_x + 5, marker_y - 19), fill=pin_core)
 
-    draw.rounded_rectangle((1, 1, WIDTH - 2, HEIGHT - 2), radius=22, outline="#e3d9cf", width=2)
+    draw.rounded_rectangle((1, 1, WIDTH - 2, HEIGHT - 2), radius=22, outline="#dcdcdc", width=2)
 
     image.convert("RGB").save(OUTPUT, quality=95)
 
