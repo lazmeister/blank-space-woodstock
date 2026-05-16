@@ -39,6 +39,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("assets/fonts/BodoniModa-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ink: #2f2924;
   --ink-soft: #5d534c;
@@ -56,6 +64,7 @@
   --header-h: 82px;
   --font-serif: "Libre Baskerville", Georgia, serif;
   --font-script: "Brittany Signature", "Brush Script MT", cursive;
+  --font-fashion: "Bodoni Moda", "Bodoni 72", Didot, "Bodoni MT", serif;
   --font-sans: "Almarai", Arial, sans-serif;
 }
 
@@ -555,11 +564,108 @@ p {
   box-shadow: 0 28px 70px rgba(47, 41, 36, 0.14);
 }
 
-.video-frame video {
-  display: block;
-  width: 100%;
+.brand-motion-frame {
+  position: relative;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  background: #482629;
+}
+
+.brand-motion {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+}
+
+.motion-line {
+  position: absolute;
+  left: 13.7%;
+  top: 62.7%;
+  width: 29%;
+  height: 2px;
+  background: rgba(255, 253, 249, 0.9);
+  transform-origin: left center;
+  animation: line-draw 12s cubic-bezier(0.62, 0, 0.24, 1) infinite;
+}
+
+.motion-line-left {
+  display: block;
+}
+
+.motion-script,
+.motion-serif {
+  position: absolute;
+  color: var(--white);
+  text-shadow: none;
+}
+
+.motion-script {
+  left: 12.8%;
+  top: 44%;
+  font-family: var(--font-script);
+  font-size: clamp(4.1rem, 9.25vw, 9.35rem);
+  line-height: 0.72;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation: script-cycle 12s ease-in-out infinite;
+}
+
+.motion-script-two {
+  left: 5.6%;
+  top: 53.6%;
+  font-size: clamp(4rem, 8.8vw, 9.1rem);
+  animation-delay: 4s;
+}
+
+.motion-script-three {
+  left: 12.8%;
+  top: 53.6%;
+  font-size: clamp(3.8rem, 8.45vw, 8.8rem);
+  animation-delay: 8s;
+}
+
+.motion-serif {
+  left: 51.2%;
+  top: 42.6%;
+  font-family: var(--font-fashion);
+  font-size: clamp(6rem, 10.55vw, 11.6rem);
+  line-height: 0.8;
+  letter-spacing: 0;
+  transform: translateY(-50%);
+}
+
+@keyframes line-draw {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  7%,
+  93% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes script-cycle {
+  0%,
+  8% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-18px);
+  }
+  15%,
+  31% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  38%,
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(18px);
+  }
 }
 
 .story-section {
@@ -1449,6 +1555,40 @@ textarea {
     min-height: 310px;
   }
 
+  .brand-motion-frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  .motion-line {
+    left: 12%;
+    top: 63%;
+    width: 31%;
+  }
+
+  .motion-script {
+    left: 11.6%;
+    top: 52%;
+    font-size: clamp(2.3rem, 13.2vw, 3.2rem);
+  }
+
+  .motion-script-two {
+    left: 4.5%;
+    top: 53.6%;
+    font-size: clamp(2.1rem, 11.5vw, 3rem);
+  }
+
+  .motion-script-three {
+    left: 8%;
+    top: 53.6%;
+    font-size: clamp(2rem, 11vw, 2.9rem);
+  }
+
+  .motion-serif {
+    left: 51%;
+    top: 43%;
+    font-size: clamp(3.05rem, 16vw, 4.05rem);
+  }
+
   .mobile-cta {
     display: none;
   }
@@ -1485,5 +1625,22 @@ textarea {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .motion-line,
+  .motion-script,
+  .motion-serif {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .motion-script,
+  .motion-serif {
+    transform: translateY(-50%);
+  }
+
+  .motion-script-two,
+  .motion-script-three {
+    display: none;
   }
 }
