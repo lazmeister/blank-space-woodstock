@@ -1448,6 +1448,22 @@ textarea {
     font-size: clamp(2rem, 8.6vw, 2.82rem);
   }
 
+  .map-frame {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 24px 54px rgba(47, 41, 36, 0.1);
+  }
+
+  .map-frame img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   .page-hero h1 {
     font-size: clamp(2.32rem, 9.8vw, 3.08rem);
   }
