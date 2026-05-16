@@ -532,8 +532,9 @@ p {
 .fact-row span {
   display: block;
   color: var(--ink-soft);
-  padding: 20px 24px;
-  font-size: 0.85rem;
+  padding: 24px 28px;
+  font-size: clamp(0.98rem, 1vw, 1.08rem);
+  line-height: 1.35;
 }
 
 .hero-facts span + span {
@@ -1598,7 +1599,8 @@ textarea {
 
   .hero-facts span,
   .fact-row span {
-    padding: 14px 0;
+    padding: 17px 0;
+    font-size: 0.98rem;
   }
 
   .hero-facts span:nth-child(even) {
