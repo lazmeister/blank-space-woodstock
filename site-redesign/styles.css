@@ -281,6 +281,47 @@ button.button {
   display: inline-block;
 }
 
+.hero-kicker {
+  margin: 0 0 clamp(24px, 3.1vw, 40px);
+  color: #e6c6a1;
+  font-family: var(--font-serif);
+  font-size: clamp(1.08rem, 1.55vw, 1.56rem);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.36);
+}
+
+.hero-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.12em;
+  margin: 0;
+  max-width: 940px;
+  color: var(--white);
+  line-height: 0.82;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.28);
+}
+
+.hero-brand-script {
+  display: inline-block;
+  font-family: var(--font-script);
+  font-size: clamp(4.75rem, 9.8vw, 9.8rem);
+  font-weight: 400;
+  line-height: 0.55;
+  text-transform: lowercase;
+}
+
+.hero-brand-serif {
+  display: inline-block;
+  font-family: var(--font-fashion);
+  font-size: clamp(4rem, 7.5vw, 7.6rem);
+  font-weight: 400;
+  line-height: 0.78;
+  text-transform: lowercase;
+}
+
 .title-fusion {
   --fusion-size: clamp(3.2rem, 7vw, 7.2rem);
   max-width: 940px;
@@ -445,6 +486,10 @@ p {
   color: var(--white);
   max-width: 760px;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.28);
+}
+
+.hero .hero-brand {
+  max-width: 940px;
 }
 
 .hero .script,
@@ -1438,6 +1483,24 @@ textarea {
   .hero h1,
   .hero .display {
     font-size: clamp(3rem, 13.5vw, 4.15rem);
+  }
+
+  .hero-kicker {
+    max-width: none;
+    margin-bottom: 36px;
+    font-size: clamp(0.88rem, 3.85vw, 1rem);
+  }
+
+  .hero-brand {
+    gap: 0.08em;
+  }
+
+  .hero-brand-script {
+    font-size: clamp(3.45rem, 20vw, 5rem);
+  }
+
+  .hero-brand-serif {
+    font-size: clamp(2.95rem, 14.5vw, 4rem);
   }
 
   h2 {
