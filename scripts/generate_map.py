@@ -291,9 +291,10 @@ def draw_map():
         )
         draw.text((x, y), text, font=park_font, fill="#737373", anchor="mm")
 
-    marker_x, marker_y = project(VENUE_LAT, VENUE_LON)
+    marker_x, marker_tip_y = project(VENUE_LAT, VENUE_LON)
+    marker_y = marker_tip_y - 48
     draw.text(
-        (marker_x, marker_y - 82),
+        (marker_x, marker_y - 34),
         "Blank Space",
         font=venue_font,
         fill="#4f4f4f",
