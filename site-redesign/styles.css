@@ -366,7 +366,7 @@ p {
     linear-gradient(90deg, rgba(22, 18, 16, 0.82), rgba(22, 18, 16, 0.4) 52%, rgba(22, 18, 16, 0.16)),
     var(--hero-image);
   background-size: cover;
-  background-position: center;
+  background-position: var(--hero-position, center);
   transform: scale(1.02);
 }
 
