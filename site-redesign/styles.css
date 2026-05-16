@@ -437,7 +437,6 @@ p {
 }
 
 .split > .reveal > .script,
-.video-intro > .script,
 .story-layout > div > .script,
 .regional-note > .reveal > .script,
 .planning-editorial > .reveal > .script,
@@ -588,18 +587,6 @@ p {
 
 .video-section {
   padding-top: clamp(12px, 3vw, 34px);
-}
-
-.video-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.62fr);
-  gap: clamp(24px, 5vw, 76px);
-  align-items: end;
-  margin-bottom: clamp(24px, 4vw, 42px);
-}
-
-.video-intro .lead {
-  max-width: 520px;
 }
 
 .video-frame {
@@ -1403,7 +1390,6 @@ textarea {
 
   .section-head,
   .split,
-  .video-intro,
   .story-layout,
   .space-hero .container,
   .regional-note,
