@@ -1229,6 +1229,17 @@ p {
   border-color: rgba(255, 253, 249, 0.18);
 }
 
+.feature-band .service-row > .meta {
+  margin-bottom: 0;
+  color: #d8bea0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3vw, 3.15rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .feature-band .service-row p,
 .feature-band .process-list p {
   color: rgba(255, 253, 249, 0.72);
